@@ -19,7 +19,8 @@ public class Main
             double shippingCost;
             if (itemPrice >= 100)
             {
-                shippingCost = 0; // Shipping is free for items $100 or more
+                shippingCost = 0;
+                // Shipping is free for items $100 or more
             }
             else
             {
@@ -31,8 +32,8 @@ public class Main
             double totalPrice = itemPrice + shippingCost;
 
             // Display the shipping cost and total price
-            System.out.printf("Shipping cost: ", shippingCost + "$");
-            System.out.printf("Total price: ", totalPrice + "$");
+            System.out.println("Shipping cost: $" + shippingCost);
+            System.out.println("Total price: $" + totalPrice);
 
         }
     }

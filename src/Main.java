@@ -31,8 +31,8 @@ public class Main
             double totalPrice = itemPrice + shippingCost;
 
             // Display the shipping cost and total price
-            System.out.printf("Shipping cost: $%.2f%n", shippingCost);
-            System.out.printf("Total price: $%.2f%n", totalPrice);
+            System.out.printf("Shipping cost: ", shippingCost + "$");
+            System.out.printf("Total price: ", totalPrice + "$");
 
         }
     }

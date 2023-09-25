@@ -1,38 +1,37 @@
 import java.util.Scanner;
-public class Main
+public class Main // class Main
     {
-    public static void main(String[] args)
+    public static void main(String[] args) // main()
         {
             Scanner in = new Scanner(System.in);  // create a Scanner in to read from the console
-
-            double itemPrice = 0;
+            double shippingCost; // num shippingCost = 0
+            double itemPrice = 0; // num itemPrice = 0
             String trash = ""; // use for bad input which will read as a String
-            System.out.print("Enter your item price: ");
+            System.out.print("Enter your item price: "); // output "Enter the price of an item:"
 
             if(in.hasNextDouble())
             {
                 // OK safe to read in a double
-                itemPrice = in.nextDouble();
-                in.nextLine(); // clear the buffer
+                itemPrice = in.nextDouble(); // input itemPrice
+                in.nextLine();
                 System.out.println("You said your item price was: " + itemPrice + "$");
-                double shippingCost;
-                if (itemPrice >= 100)
+
+                if (itemPrice >= 100) // if itemPrice >= 100
                 {
-                    shippingCost = 0;
+                    shippingCost = 0; // then shippingCost = 0
                     // Shipping is free for items $100 or more
                 }
                 else
                 {
-                    shippingCost = 0.02 * itemPrice;
+                    shippingCost = 0.02 * itemPrice; // shippingCost = itemPrice * 0.02
                     // Shipping cost is 2% of the item price
-                }
+                } //end if
 
-                // Calculate the total price
-                double totalPrice = itemPrice + shippingCost;
+                double totalPrice = itemPrice + shippingCost; // totalPrice =  itemPrice + shippingCost
 
                 // Display the shipping cost and total price
-                System.out.println("Shipping cost: $" + shippingCost);
-                System.out.println("Total price: $" + totalPrice);
+                System.out.println("Shipping cost: $" + shippingCost); // output "The shipping cost: " + shippingCost
+                System.out.println("Total price: $" + totalPrice); // output "The total price is: " + totalPrice
 
             }
             else
@@ -41,8 +40,8 @@ public class Main
                 trash = in.nextLine();  // Ok have to read the input as a String
                 System.out.println("You said your item price was: " + trash);
                 System.out.println("Run the program again and enter a valid amount!");
-            }
+            } // end if
 
 
-        }
-    }
+        } // return
+    } // end class

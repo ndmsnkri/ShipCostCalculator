@@ -15,25 +15,34 @@ public class Main
                 itemPrice = in.nextDouble();
                 in.nextLine(); // clear the buffer
                 System.out.println("You said your item price was: " + itemPrice + "$");
-            }
-            double shippingCost;
-            if (itemPrice >= 100)
-            {
-                shippingCost = 0;
-                // Shipping is free for items $100 or more
+                double shippingCost;
+                if (itemPrice >= 100)
+                {
+                    shippingCost = 0;
+                    // Shipping is free for items $100 or more
+                }
+                else
+                {
+                    shippingCost = 0.02 * itemPrice;
+                    // Shipping cost is 2% of the item price
+                }
+
+                // Calculate the total price
+                double totalPrice = itemPrice + shippingCost;
+
+                // Display the shipping cost and total price
+                System.out.println("Shipping cost: $" + shippingCost);
+                System.out.println("Total price: $" + totalPrice);
+
             }
             else
             {
-                shippingCost = 0.02 * itemPrice;
-                // Shipping cost is 2% of the item price
+                // Not a double can’t use nextDouble() read as String with nextLine() instead
+                trash = in.nextLine();  // Ok have to read the input as a String
+                System.out.println("You said your item price was: " + trash);
+                System.out.println("Run the program again and enter a valid amount!");
             }
 
-            // Calculate the total price
-            double totalPrice = itemPrice + shippingCost;
-
-            // Display the shipping cost and total price
-            System.out.println("Shipping cost: $" + shippingCost);
-            System.out.println("Total price: $" + totalPrice);
 
         }
     }
